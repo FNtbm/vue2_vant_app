@@ -16,6 +16,7 @@ F12 改为 手机端
 
 ## fileDir
 
+```
 ​ vue2.x_proiect
 ​ ├── README.md
 ​ ├── babel.config.js
@@ -42,3 +43,4 @@ F12 改为 手机端
 ​ ├── webpackCofing.js
 ​ └── www.sbqiche.com
 ​ └── css
+```
