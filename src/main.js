@@ -3,10 +3,21 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-Vue.config.productionTip = false;
+import "./mock/index";
+import "@/assets/less/global.less";
+import "@/icons/index.js";
 
+// import "@/utils/request";
+// import { ConfigProvider } from "vant";
+// import "@/utils/rem";
+
+// Vue.use(ConfigProvider);
+
+Vue.config.productionTip = false;
 new Vue({
   router,
   store,
   render: (h) => h(App),
 }).$mount("#app");
+
+//渲染主组件 并挂载至html中的#app
