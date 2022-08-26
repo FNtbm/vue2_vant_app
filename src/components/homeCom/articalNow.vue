@@ -115,7 +115,7 @@ export default {
       }
       .cell_date {
         color: rgba(128, 128, 128);
-        font-size: 10px;
+        font-size: 0.7rem;
         // top: 20px;
       }
     }

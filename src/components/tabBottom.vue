@@ -44,5 +44,8 @@ export default {
   .van-tabbar-item__icon {
     font-size: 1rem;
   }
+  .van-tabbar-item {
+    font-size: 0.8rem;
+  }
 }
 </style>

@@ -48,4 +48,7 @@ export default {
     }
   }
 }
+.van-search__content--round {
+  border-radius: 50px;
+}
 </style>
