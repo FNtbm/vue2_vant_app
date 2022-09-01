@@ -1,4 +1,4 @@
-# vue2_vant_app
+# vue2_vant_app  [live demo](https://vant-app.netlify.app/#/)
 
 ## Project setup
 
