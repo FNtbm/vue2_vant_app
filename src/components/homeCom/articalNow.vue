@@ -99,12 +99,13 @@ export default {
   font-family: "Microsoft YaHei";
   // padding-bottom: 0.5rem;
   // margin-top: 1rem;
+  margin: 0 5px;
   .cell {
     background-color: #f9f9fb;
     position: relative;
-    padding: 50px 40px;
-    margin-top: 20px;
-    box-shadow: 0 0 3px black;
+    padding: 10px;
+    margin-top: 8px;
+    box-shadow: 1px 1px 3px 0px #bcbcf33b;
     .cell_top {
       display: flex;
       align-items: center;
@@ -114,7 +115,7 @@ export default {
         font-size: 0.8rem;
       }
       .cell_date {
-        color: rgba(128, 128, 128);
+        color: rgb(134, 152, 157);
         font-size: 0.7rem;
         // top: 20px;
       }
@@ -124,7 +125,7 @@ export default {
       margin-top: 0.8rem;
     }
     p {
-      height: 1.2em;
+      // height: 1.2em;
       // width: 100%;
       font-size: 0.8rem;
       white-space: nowrap;
@@ -148,6 +149,6 @@ export default {
   height: @height;
   text-align: center;
   line-height: @height;
-  background-color: rgba(187, 231, 217, 0.8);
+  background-color: rgba(160, 218, 235, 0.6);
 }
 </style>

@@ -56,9 +56,9 @@ export default {
         this.fire.length % 6 < 4 &&
         this.swipeCurrent == this.swipeCount - 1
       ) {
-        return 66;
+        return 375 / 4;
       } else {
-        return 133;
+        return 375 / 2;
       }
     },
   },
@@ -99,8 +99,8 @@ div {
 }
 
 //滑块指示器大小
-.van-swipe__indicator {
-  width: 0.6rem;
-  height: 0.1rem;
-}
+// .van-swipe__indicator {
+//   width: 0.6rem;
+//   height: 0.1rem;
+// }
 </style>

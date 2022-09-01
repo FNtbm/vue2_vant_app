@@ -21,9 +21,15 @@ export const getArtical = () => {
     url: "/home/artical",
   });
 };
-export const getStockList = () => {
+// export const getStockList = () => {
+//   return request({
+//     method: "GET",
+//     url: "/home/stockList",
+//   });
+// };
+export const getStockList = (index) => {
   return request({
     method: "GET",
-    url: "/home/stockList",
+    url: `http://api.cpengx.cn/finance/api/stocks?type=${index}`,
   });
 };

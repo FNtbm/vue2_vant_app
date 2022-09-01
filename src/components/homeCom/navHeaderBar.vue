@@ -33,22 +33,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.van-nav-bar {
-  position: fixed;
-  width: 100%;
-  /deep/ .van-nav-bar__content {
-    height: 2.4rem;
-
-    .van-search .van-cell {
-      padding: 0.4rem;
-      .van-icon {
-        font-size: 0.5rem;
-        line-height: normal;
-      }
-    }
-  }
-}
-.van-search__content--round {
-  border-radius: 50px;
-}
+//
 </style>

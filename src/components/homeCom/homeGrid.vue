@@ -18,12 +18,5 @@ export default {
 };
 </script>
 <style lang="less">
-.homeGrid {
-  padding-top: 2.4rem;
-  font-size: 0.8rem;
-  .van-grid-item {
-    // margin: 5px;
-    margin: 40px 0;
-  }
-}
+//
 </style>

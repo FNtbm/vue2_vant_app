@@ -7,12 +7,6 @@ import "./mock/index";
 import "@/assets/less/global.less";
 import "@/icons/index.js";
 
-// import "@/utils/request";
-// import { ConfigProvider } from "vant";
-// import "@/utils/rem";
-
-// Vue.use(ConfigProvider);
-
 Vue.config.productionTip = false;
 new Vue({
   router,
