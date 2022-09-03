@@ -1,4 +1,4 @@
-# vue2_vant_app  [live demo](https://vant-app.netlify.app/#/)
+# vue2_vant_app [live demo](https://vant-app.netlify.app/#/)
 
 ## Project setup
 
@@ -11,7 +11,6 @@ npm install
 ```
 npm run serve
 
-F12 改为 手机端
 ```
 
 ## fileDir

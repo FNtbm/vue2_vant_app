@@ -12,6 +12,7 @@
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "lib-flexible": "^0.3.2",
+    "material-symbols": "^0.2.9",
     "vant": "^2.12.48",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
@@ -20,6 +21,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@iconify/icons-material-symbols": "^1.2.15",
+    "@iconify/vue2": "^1.2.1",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",

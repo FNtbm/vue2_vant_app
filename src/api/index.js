@@ -15,7 +15,7 @@ export const getFire = () => {
   });
 };
 
-export const getArtical = () => {
+export const getArticle = () => {
   return request({
     method: "GET",
     url: "/home/artical",
