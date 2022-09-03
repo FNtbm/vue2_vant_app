@@ -4,9 +4,9 @@
       <!-- key 用于减少真实DOM的更新 -->
       <van-cell
         class="cell"
-        v-for="item of artical"
+        v-for="item of article"
         :key="item.count"
-        :to="`/artical/${item.count}`"
+        :to="`/article/${item.count}`"
       >
         <div class="cell_top">
           <van-image
@@ -36,31 +36,31 @@
         </div>
       </van-cell>
     </van-cell-group>
-    <van-loading v-if="isloading && !isfinish" color="#1989fa" size="30px" />
-    <div v-if="isfinish" class="finish">什么也没有发现 ~ ~</div>
+    <van-loading v-if="onLoading && !finish" color="#1989fa" size="30px" />
+    <div v-if="finish" class="finish">什么也没有发现 ~ ~</div>
   </div>
 </template>
 <script>
-import { getArtical } from "@/api/index";
+import { getArticle } from "@/api/index";
 export default {
   data() {
     return {
-      artical: [],
+      article: [],
       page: 0,
-      isfinish: false,
-      isloading: false,
+      finish: false,
+      onLoading: false,
     };
   },
   methods: {
     getList() {
-      this.isloading = true;
+      this.onLoading = true;
       // console.log(this);
-      getArtical().then((res) => {
-        this.artical.push(...res.list);
+      getArticle().then((res) => {
+        this.article.push(...res.list);
         this.page++;
         console.log(`第${this.page}页，共三页`);
         // console.log(res.list.map((i) => i.count));
-        this.isloading = false;
+        this.onLoading = false;
       });
     },
   },
@@ -69,7 +69,7 @@ export default {
     // 防抖函数;
     let fn = () => {
       if (this.page == 3) {
-        this.isfinish = true;
+        this.finish = true;
         return;
       }
       let scrollHeight = document.documentElement.scrollHeight;
@@ -77,7 +77,7 @@ export default {
       let innerHeight = window.innerHeight;
       //当滚动条距底部60px且停留超过0.25秒后，再次请求数据
       //bug1 增加请求状态避免重复请求
-      if (!this.isloading && scrollHeight - scrollTop - innerHeight < 60) {
+      if (!this.onLoading && scrollHeight - scrollTop - innerHeight < 60) {
         this.getList();
       }
     };
