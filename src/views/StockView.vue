@@ -1,21 +1,21 @@
 <template>
   <div>
     <div class="top"></div>
-    <van-tabs v-model="active" animated>
+    <van-tabs v-model="active" :swipeable="true" animated>
       <van-tab v-for="(title, index) in titles" :title="title" :key="title">
         <van-list v-for="(stock, i) in stocks[index]" :key="stock.code">
           <van-cell :title="`${i + 1} ${stock.name}`">
-            <Icon
+            <!-- <Icon
               v-if="stock.chg < 0"
               icon="material-symbols:arrow-downward"
               color="green"
-            />
+            /> -->
             <Icon
-              v-if="stock.chg > 0"
               icon="material-symbols:arrow-downward"
-              color="red"
-              :rotate="2"
+              :color="stock.chg > 0 ? 'red' : 'green'"
+              :rotate="stock.chg > 0 ? '2' : '0'"
             />
+
             <span> {{ stock.value }}</span>
           </van-cell>
         </van-list>

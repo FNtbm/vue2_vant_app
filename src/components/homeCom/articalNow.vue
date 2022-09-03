@@ -106,6 +106,9 @@ export default {
     padding: 10px;
     margin-top: 8px;
     box-shadow: 1px 1px 3px 0px #bcbcf33b;
+    &:first-child {
+      margin-top: 0;
+    }
     .cell_top {
       display: flex;
       align-items: center;

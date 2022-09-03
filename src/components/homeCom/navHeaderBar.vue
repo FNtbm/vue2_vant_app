@@ -10,7 +10,7 @@
         <van-search
           v-model="value"
           shape="round"
-          placeholder="请输入搜索关键词"
+          placeholder="搜索关键词"
           left-icon="search"
         />
       </template>
@@ -33,5 +33,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-//
+// .van-search {
+//   // width: 200px;
+// }
 </style>

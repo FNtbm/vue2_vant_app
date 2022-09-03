@@ -4,26 +4,31 @@
     <h3 v-pre>今日热点</h3>
     <div>
       <!-- ！！问题—当启动自动播放时，因轮播导致的高度变化会触发scroll事件且会使列表抖动 -->
-      <van-swipe :loop="true" :height="height" @change="change">
-        <!-- i 记录当前页数 -->
-        <van-swipe-item v-for="i in swipeCount" :key="i">
-          <van-grid :column-num="3">
-            <!-- 使用 i 截取 0-5 的数据 -->
-            <van-grid-item
-              v-for="item in fire.slice((i - 1) * 6, i * 6)"
-              :key="item.count"
-            >
-              <h4>{{ item.name }}</h4>
-              <h6 :class="item.amount > 0 ? 'red' : 'green'">
-                {{ item.current }}
-              </h6>
-              <h6 :class="item.amount > 0 ? 'red' : 'green'">
-                {{ item.amount }}%
-              </h6>
-            </van-grid-item>
-          </van-grid>
-        </van-swipe-item>
-      </van-swipe>
+      <!-- 修复问题1  不自动播放滚动 -->
+      <!-- 问题2 路由切换，再切回来时，轮播图自动切回第一页但没有刷新CurrentIndex -->
+      <!-- 修复问题2 监听路由，返回当前页重置SwipeCurrentIndex -->
+      <keep-alive>
+        <van-swipe :loop="true" :height="height" @change="change">
+          <!-- i 记录当前页数 -->
+          <van-swipe-item v-for="i in swipeCount" :key="i">
+            <van-grid :column-num="3">
+              <!-- 使用 i 截取 0-5 的数据 -->
+              <van-grid-item
+                v-for="item in fire.slice((i - 1) * 6, i * 6)"
+                :key="item.count"
+              >
+                <h4>{{ item.name }}</h4>
+                <h6 :class="item.amount > 0 ? 'red' : 'green'">
+                  {{ item.current }}
+                </h6>
+                <h6 :class="item.amount > 0 ? 'red' : 'green'">
+                  {{ item.amount }}%
+                </h6>
+              </van-grid-item>
+            </van-grid>
+          </van-swipe-item>
+        </van-swipe>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -50,15 +55,23 @@ export default {
       return Math.ceil(this.fire.length / 6);
     },
 
-    //以滑块内容的行数设置其高度
+    // 以滑块内容的行数设置其高度
     height() {
       if (
         this.fire.length % 6 < 4 &&
         this.swipeCurrent == this.swipeCount - 1
       ) {
-        return 375 / 4;
+        return 343 / 4;
       } else {
-        return 375 / 2;
+        return 343 / 2;
+      }
+    },
+  },
+
+  watch: {
+    $route(to) {
+      if (to.name == "home") {
+        this.swipeCurrent = 0;
       }
     },
   },
