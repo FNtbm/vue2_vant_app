@@ -33,3 +33,10 @@ export const getStockList = (index) => {
     url: `http://api.cpengx.cn/finance/api/stocks?type=${index}`,
   });
 };
+
+export const getFund = () => {
+  return request({
+    method: "GET",
+    url: `http://api.cpengx.cn/finance/api/fund/tablist`,
+  });
+};

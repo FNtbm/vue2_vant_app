@@ -5,7 +5,8 @@ import store from "./store";
 
 import "./mock/index";
 import "@/assets/less/global.less";
-import "@/icons/index.js";
+// import "@/icons/index.js";
+// import "@/assets/img/";
 
 Vue.config.productionTip = false;
 new Vue({

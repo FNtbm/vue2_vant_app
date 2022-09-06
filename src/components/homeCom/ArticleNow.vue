@@ -82,11 +82,11 @@ export default {
       }
     };
 
-    function debounce(fn, dalay) {
+    function debounce(fn, daley) {
       let timer = null;
       return function () {
         clearTimeout(timer);
-        timer = setTimeout(fn, dalay);
+        timer = setTimeout(fn, daley);
       };
     }
     // 滚动防抖;

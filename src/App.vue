@@ -5,20 +5,20 @@
     </keep-alive>
 
     <!-- 底部导航栏 -->
-    <tabBottom></tabBottom>
+    <TabBottom></TabBottom>
   </div>
 </template>
 <script>
 // import axios from "axios";
 // import { getTest } from "@/api/index";
 // import axios from "axios";
-import tabBottom from "@/components/tabBottom.vue";
+import TabBottom from "@/components/TabBottom.vue";
 
 export default {
   data() {
     return {};
   },
-  comments: [tabBottom],
+  comments: [TabBottom],
   // mounted() {
   //   getTest().then((res) => {
   //     console.log(res);
