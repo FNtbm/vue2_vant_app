@@ -41,32 +41,32 @@ module.exports = defineConfig({
   devServer: {
     // 配置代理
     proxy: {
-      "/api": {
-        // 若请求路径以 /api 开头
-        target: "https://es6.ruanyifeng.com",
-        changOrigin: true,
-        pathRewrite: {
-          "^/api": "",
-        },
-      },
-      "/api1": {
-        // 若请求路径以 /api 开头
-        target: "https://srv.carbonads.net",
-        changOrigin: true,
-        // Credentials: true,
-        pathRewrite: {
-          "^/api": "",
-        },
-      },
       "/api2": {
         // 若请求路径以 /api 开头
-        target: "https://cli.vuejs.org",
+        target: "http://api.cpengx.cn",
         changOrigin: true,
         // Credentials: true,
         pathRewrite: {
-          "^/api": "",
+          "^/api2": "",
         },
       },
+      // "/api": {
+      //   // 若请求路径以 /api 开头
+      //   target: "https://es6.ruanyifeng.com",
+      //   changOrigin: true,
+      //   pathRewrite: {
+      //     "^/api": "",
+      //   },
+      // },
+      // "/api1": {
+      //   // 若请求路径以 /api 开头
+      //   target: "https://srv.carbonads.net",
+      //   changOrigin: true,
+      //   // Credentials: true,
+      //   pathRewrite: {
+      //     "^/api": "",
+      //   },
+      // },
     },
   },
 });

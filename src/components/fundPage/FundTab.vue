@@ -4,7 +4,7 @@
       <van-tab
         v-for="fund in funds"
         :title="fund.tab_name"
-        :key="fund[tab_type]"
+        :key="fund.tab_type"
       >
         <div>
           <h3>{{ fund.comment }}</h3>

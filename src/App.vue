@@ -18,7 +18,7 @@ export default {
   data() {
     return {};
   },
-  comments: [TabBottom],
+  comments: { TabBottom },
   // mounted() {
   //   getTest().then((res) => {
   //     console.log(res);
