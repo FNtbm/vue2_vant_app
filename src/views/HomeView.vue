@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- 顶部导航栏 -->
-    <NavHeaderBar />
+    <navHeaderBar />
     <!-- 顶部list -->
-    <HomeGrid />
+    <homeGrid />
     <!-- 今日热点 -->
-    <FireToday />
+    <fireToday />
     <!-- 文章 -->
     <ArticleNow />
   </div>
@@ -13,9 +13,9 @@
 
 <script>
 // import SvgIcon from "@/components/svgIcon.vue";
-import NavHeaderBar from "@/components/homeCom/NavHeaderBar.vue";
-import HomeGrid from "@/components/homeCom/HomeGrid.vue";
-import FireToday from "@/components/homeCom/FireToday.vue";
+import navHeaderBar from "@/components/homeCom/navHeaderBar.vue";
+import homeGrid from "@/components/homeCom/homeGrid.vue";
+import fireToday from "@/components/homeCom/fireToday.vue";
 import ArticleNow from "@/components/homeCom/ArticleNow.vue";
 
 // @ is an alias to /src
@@ -24,9 +24,9 @@ import ArticleNow from "@/components/homeCom/ArticleNow.vue";
 export default {
   name: "HomeView",
   components: {
-    NavHeaderBar,
-    HomeGrid,
-    FireToday,
+    navHeaderBar,
+    homeGrid,
+    fireToday,
     ArticleNow,
     // HelloWorld,
   },
