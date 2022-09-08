@@ -1,4 +1,5 @@
 import request from "@/utils/request";
+// const fs = require("fs");
 
 // 获取股票指数
 export const getStock = () => {
@@ -27,16 +28,20 @@ export const getArticle = () => {
 //     url: "/home/stockList",
 //   });
 // };
+
+import { data } from "./json.js";
+
 export const getStockList = (index) => {
-  return request({
-    method: "GET",
-    url: `api2/finance/api/stocks?type=${index}`,
+  let a = `stock${index}`;
+  // console.log(stock[a]);
+  return new Promise((succeed) => {
+    succeed(data.stock[a]);
   });
 };
 
 export const getFund = () => {
-  return request({
-    method: "GET",
-    url: `api2/finance/api/fund/tablist`,
+  // console.log(fundList);
+  return new Promise((succeed) => {
+    succeed(data.fundList);
   });
 };

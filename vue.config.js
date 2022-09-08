@@ -12,6 +12,9 @@ module.exports = defineConfig({
   transpileDependencies: true,
 
   configureWebpack: {
+    // node: {
+    //   fs: "empty",
+    // },
     //该对象会被合并至webpack配置中
     plugins: [
       ComponentsPlugin({
@@ -20,6 +23,7 @@ module.exports = defineConfig({
     ],
   },
   chainWebpack(config) {
+    // config.node.set(fs, "empty");
     config.resolve.alias.set("@css", resolve("src/assets/css"));
     config.resolve.alias.set("@img", resolve("src/assets/img"));
 

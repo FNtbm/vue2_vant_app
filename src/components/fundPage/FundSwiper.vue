@@ -20,7 +20,7 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .my-swipe img {
   width: 375px;
 }

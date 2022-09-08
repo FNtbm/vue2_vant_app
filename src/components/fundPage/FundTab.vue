@@ -42,7 +42,7 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .van-tabs {
   p {
     font-size: 13px;

@@ -1,5 +1,6 @@
 const Mock = require("mockjs");
-
+// const fs = require("fs");
+// import * as fs from "fs/promises";
 // let Random = Mock.Random;
 
 //设置响应延迟
@@ -16,6 +17,9 @@ Mock.mock("/home/fire", "get", () => {
       },
     ],
   });
+  // fs.writeFile("./fire.json", fire, (err) => {
+  //   console.log(err);
+  // });
   return {
     data: fire,
   };
