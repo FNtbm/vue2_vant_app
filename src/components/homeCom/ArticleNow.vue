@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="articles">
     <van-cell-group inset>
       <!-- key 用于减少真实DOM的更新 -->
       <van-cell
         class="cell"
         v-for="item of article"
         :key="item.count"
-        :to="`/article/${item.count}`"
+        :to="{ name: 'article', params: { id: item.count, article: item } }"
       >
         <div class="cell_top">
           <van-image
@@ -68,6 +68,9 @@ export default {
     this.getList();
     // 防抖函数;
     let fn = () => {
+      if (this.$route.name != "home") {
+        return;
+      }
       if (this.page == 3) {
         this.finish = true;
         return;
@@ -94,7 +97,10 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
+.articles {
+  overscroll-behavior: none;
+}
 .van-cell-group {
   font-family: "Microsoft YaHei";
   // padding-bottom: 0.5rem;
@@ -125,16 +131,21 @@ export default {
     }
     h4 {
       // margin-bottom: 0.2rem;
+      // text-align: center;
       margin-top: 0.8rem;
     }
     p {
-      // height: 1.2em;
-      // width: 100%;
       font-size: 0.8rem;
-      white-space: nowrap;
+
       overflow: hidden;
       text-overflow: clip;
       margin-top: 0.5rem;
+
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
     .cell_bottom {
       width: 8rem;

@@ -9,6 +9,7 @@ const { defineConfig } = require("@vue/cli-service");
 // 定义resolve方法，获取绝对路径
 
 module.exports = defineConfig({
+  lintOnSave: false,
   transpileDependencies: true,
 
   configureWebpack: {

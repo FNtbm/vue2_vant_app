@@ -30,8 +30,8 @@ Mock.mock("/home/artical", "get", {
     {
       count: "@id()",
       name: "@ctitle(4)",
-      title: "@ctitle(6,10)",
-      paragraph: "@cparagraph(12)",
+      title: "@ctitle(6,15)",
+      paragraph: "@cparagraph(30,100)",
       date: "@date",
       img: "@img(10*10)",
       "like|0-200": 10,

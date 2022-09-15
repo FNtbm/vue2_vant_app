@@ -44,6 +44,9 @@ export default {
 </script>
 <style lang="less" scoped>
 .van-tabs {
+  h3 {
+    text-align: center;
+  }
   p {
     font-size: 13px;
     padding: 5px 10px;

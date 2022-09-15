@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 顶部导航栏 -->
-    <navHeaderBar />
+    <!-- <navHeaderBar /> -->
     <!-- 顶部list -->
     <homeGrid />
     <!-- 今日热点 -->
@@ -13,7 +13,7 @@
 
 <script>
 // import SvgIcon from "@/components/svgIcon.vue";
-import navHeaderBar from "@/components/homeCom/navHeaderBar.vue";
+// import navHeaderBar from "@/components/homeCom/navHeaderBar.vue";
 import homeGrid from "@/components/homeCom/homeGrid.vue";
 import fireToday from "@/components/homeCom/fireToday.vue";
 import ArticleNow from "@/components/homeCom/ArticleNow.vue";
@@ -24,7 +24,6 @@ import ArticleNow from "@/components/homeCom/ArticleNow.vue";
 export default {
   name: "HomeView",
   components: {
-    navHeaderBar,
     homeGrid,
     fireToday,
     ArticleNow,
@@ -43,3 +42,4 @@ export default {
   mounted() {},
 };
 </script>
+<style lang="less" scoped></style>

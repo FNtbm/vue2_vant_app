@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <tabTop></tabTop>
     <keep-alive>
       <router-view> </router-view>
     </keep-alive>
@@ -13,12 +14,12 @@
 // import { getTest } from "@/api/index";
 // import axios from "axios";
 import tabBottom from "@/components/tabBottom.vue";
-
+import navHeaderBarVue from "./components/homeCom/navHeaderBar.vue";
 export default {
   data() {
     return {};
   },
-  comments: { tabBottom },
+  components: { tabBottom, tabTop: navHeaderBarVue },
   // mounted() {
   //   getTest().then((res) => {
   //     console.log(res);

@@ -4,7 +4,12 @@
     <!-- <van-icon name="envelop-o" /> -->
     <van-nav-bar>
       <template #left>
-        <van-icon name="wap-home-o" size="20" color="black" />
+        <van-icon
+          @click="$router.push('/')"
+          name="wap-home-o"
+          size="20"
+          color="black"
+        />
       </template>
       <template #title>
         <van-search
@@ -29,11 +34,12 @@ export default {
     };
   },
   methods: {},
+  watch: {},
 };
 </script>
 
 <style lang="less" scoped>
-// .van-search {
-//   // width: 200px;
-// }
+.van-nav-bar {
+  margin-bottom: 10px;
+}
 </style>
