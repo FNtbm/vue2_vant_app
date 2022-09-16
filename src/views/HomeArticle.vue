@@ -17,6 +17,7 @@
       <van-checkbox v-model="checked">
         <template #icon="props">
           <img
+            @click="change"
             class="img-icon"
             :src="props.checked ? activeIcon : inactiveIcon"
           />
@@ -34,9 +35,10 @@
         <template #icon="props">
           <img
             class="img-icon"
-            src="https://api.iconify.design/ri:share-forward-2-fill.svg?color=%23888888"
+            src="https://api.iconify.design/ri:share-forward-2-fill.svg"
           />
         </template>
+        <!-- <span>{{ article.share }}</span> -->
       </van-checkbox>
     </div>
   </div>
@@ -48,17 +50,15 @@ export default {
     return {
       checked: true,
       good: [],
-
       activeIcon: "https://api.iconify.design/icon-park-outline/good-one.svg",
       inactiveIcon:
         "https://api.iconify.design/icon-park-twotone:good-one.svg?color=red",
     };
   },
-
-  beforeMounted() {
-    if (this.article) {
-      sessionStorage[this.article.count] = this.article;
-    }
+  methods: {
+    change() {
+      this.article.like += this.checked ? 1 : -1;
+    },
   },
 };
 </script>
@@ -67,7 +67,7 @@ export default {
   padding: 10px 15px;
   .title {
     text-align: center;
-    background-color: ;
+
     // margin-bottom: 15px;
   }
   .author {
@@ -87,23 +87,29 @@ export default {
     }
   }
   p {
-    line-height: 160%;
+    font-size: 15px;
+    line-height: 180%;
     text-indent: 2em;
   }
   background-color: rgba(196, 228, 135, 0.1);
 }
 .tab {
   position: sticky;
-  bottom: 0px;
+  bottom: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgb(253, 253, 253);
   height: 35px;
   // align-items: space-around;
   .van-checkbox {
+    span {
+      height: 20px;
+      font-size: 15px;
+    }
     display: flex;
     justify-content: center;
+    // align-items: center;
     width: 100px;
     height: 25px;
     &:nth-of-type(n) {

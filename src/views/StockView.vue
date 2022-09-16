@@ -5,11 +5,6 @@
       <van-tab v-for="(title, index) in titles" :title="title" :key="title">
         <van-list v-for="(stock, i) in stocks[index]" :key="stock.code">
           <van-cell :title="`${i + 1} ${stock.name}`">
-            <!-- <Icon
-              v-if="stock.chg < 0"
-              icon="material-symbols:arrow-downward"
-              color="green"
-            /> -->
             <Icon
               icon="material-symbols:arrow-downward"
               :color="stock.chg > 0 ? 'red' : 'green'"

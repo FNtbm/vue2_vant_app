@@ -15,7 +15,7 @@ const routes = [
     path: "/article/:id",
     name: "article",
     props: (route) => ({ article: route.params.article }),
-    component: () => import("../views/HomeArtical.vue"),
+    component: () => import("../views/HomeArticle.vue"),
   },
   {
     path: "/fund",
@@ -32,10 +32,16 @@ const routes = [
     component: StockView,
   },
   {
+    path: "/login",
+    name: "login",
+
+    component: () => import("../views/Login.vue"),
+  },
+  {
     path: "/user",
     name: "user",
 
-    component: () => import("../views/UserView.vue"),
+    component: () => import("../views/User.vue"),
   },
   {
     path: "*",
@@ -46,14 +52,13 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  scrollBehavior(to) {
-    const position = {};
-    if (to.matched.some((m) => m.meta.scrollToTop)) {
-      position.x = 0;
-      position.y = 0;
-    }
-    return position;
-  },
 });
 
+router.beforeEach(async (to, from, next) => {
+  if (!sessionStorage.login && to.name != "login" && to.name == "user") {
+    next({ name: "login" });
+  } else next();
+});
+
+//进入user时判断是否登录，是进入，否进入登录页面
 export default router;
